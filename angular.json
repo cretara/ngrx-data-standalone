@@ -28,10 +28,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss",
-              "node_modules/tailwindcss/base.css",
-              "node_modules/tailwindcss/components.css",
-              "node_modules/tailwindcss/utilities.css"
+              "src/styles.scss"
             ],
             "scripts": []
           },
