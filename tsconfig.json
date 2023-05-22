@@ -22,12 +22,21 @@
       "es2020",
       "dom"
     ],
-    "useDefineForClassFields": false
+    "types": [
+      "cypress"
+    ],
+    "useDefineForClassFields": false,
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "exclude": [
+    "node_modules",
+    "cypress",
+    "cypress.config.ts",
+    "**/*.cy.ts"
+  ]
 }

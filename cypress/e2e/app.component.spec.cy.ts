@@ -1,4 +1,4 @@
-import {AppComponent} from "../../src/app/app.component";
+import {AppComponent} from "../../src/app/components/app.component";
 
 describe("AppComponent", () => {
   it("should visit main page of AppComponent", () => {
