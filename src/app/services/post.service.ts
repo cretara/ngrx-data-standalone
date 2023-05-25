@@ -11,7 +11,6 @@ export class PostService {
   constructor(private loggerService: LoggerService, private httpClient: HttpClient) {
   }
 
-
   get messageToLog(): string {
     return this._messageToLog;
   }

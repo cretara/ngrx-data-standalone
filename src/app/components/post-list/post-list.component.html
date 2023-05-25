@@ -1,0 +1,6 @@
+<div *ngIf="postList.length > 0">
+  <div *ngFor="let singlePost of postList">
+    <h1>{{singlePost.title}}</h1>
+    <span>{{singlePost.body}}</span>
+  </div>
+</div>
