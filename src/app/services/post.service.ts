@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Post} from "../model/post";
+import {LoggerService} from './logger.service';
 
 @Injectable({
   providedIn: 'root'
@@ -608,5 +609,19 @@ export class PostService {
       "body": "cupiditate quo est a modi nesciunt soluta\nipsa voluptas error itaque dicta in\nautem qui minus magnam et distinctio eum\naccusamus ratione error aut"
     }
   ];
+
+  constructor(private loggerService: LoggerService) {
+  }
+
+
+  get messageToLog(): string {
+    return this._messageToLog;
+  }
+
+  private readonly _messageToLog = "A certain message";
+
+  logACertainMessage(messageToLog = this._messageToLog){
+    this.loggerService.log(messageToLog);
+  }
 
 }

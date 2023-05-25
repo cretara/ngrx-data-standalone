@@ -22,9 +22,6 @@
       "es2020",
       "dom"
     ],
-    "types": [
-      "cypress"
-    ],
     "useDefineForClassFields": false,
   },
   "angularCompilerOptions": {
