@@ -8,7 +8,15 @@ describe('PostServiceService', () => {
 
   beforeEach(() => {
     loggerService = jasmine.createSpyObj("LoggerService", ["log"]);
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [
+        PostService,
+        {
+          provide: LoggerService,
+          useValue: loggerService
+        }
+      ]
+    });
     postService = TestBed.inject(PostService);
   });
 
