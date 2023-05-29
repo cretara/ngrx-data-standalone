@@ -1,32 +1,30 @@
-import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {RouterTestingModule} from '@angular/router/testing';
+import {AppComponent} from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
+  let appComponentFixture: ComponentFixture<AppComponent>;
+  let appComponent: AppComponent;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
       imports: [
         RouterTestingModule
       ],
     }).compileComponents();
+    appComponentFixture = TestBed.createComponent(AppComponent);
+    appComponent = appComponentFixture.componentInstance;
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    fixture.detectChanges();
-    expect(app).toBeTruthy();
+    expect(appComponent).toBeTruthy();
   });
 
   it(`should have as title 'angular16-new-features'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.counter()).toBe(0);
+    expect(appComponent.counter()).toBe(0);
   });
 
-  xit('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    pending();
+  it('should render title', () => {
+    appComponentFixture.detectChanges();
   });
 });
