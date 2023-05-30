@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Post} from "../../model/post";
 import {NgForOf, NgIf} from "@angular/common";
 import {PostService} from "../../services/post.service";
@@ -14,19 +14,17 @@ import {takeUntilDestroyed} from "@angular/core/rxjs-interop";
   ],
   standalone: true
 })
-export class PostListComponent implements OnInit {
+export class PostListComponent {
 
   public postList: Post[] = [];
 
 
   constructor(private postService: PostService) {
-  }
-
-  ngOnInit(): void {
     this.postService.getPostsFromAPI()
       .pipe(takeUntilDestroyed())
       .subscribe((postsResponse) => {
         this.postList = postsResponse
       })
   }
+
 }
