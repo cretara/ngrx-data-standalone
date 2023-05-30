@@ -15,12 +15,18 @@ import {Subscription} from "rxjs";
   standalone: true
 })
 export class PostListComponent implements OnInit, OnDestroy {
+
   public postList: Post[] = [];
+
   private postListSubscription: Subscription = new Subscription();
 
   constructor(private postService: PostService) {
 
   }
+
+  postTrackBy(index: number, singlePost: Post): number {
+    return singlePost.id;
+  };
 
   ngOnDestroy(): void {
     this.postListSubscription.unsubscribe();
