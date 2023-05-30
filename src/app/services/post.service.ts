@@ -4,9 +4,11 @@ import {LoggerService} from './logger.service';
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostService {
+
+  private readonly _messageToLog = "A certain message";
 
   constructor(private loggerService: LoggerService, private httpClient: HttpClient) {
   }
@@ -15,9 +17,7 @@ export class PostService {
     return this._messageToLog;
   }
 
-  private readonly _messageToLog = "A certain message";
-
-  logACertainMessage(messageToLog = this._messageToLog){
+  logACertainMessage(messageToLog = this._messageToLog) {
     this.loggerService.log(messageToLog);
   }
 
