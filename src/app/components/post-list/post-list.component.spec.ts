@@ -11,17 +11,18 @@ describe('PostListComponent', () => {
   let postListComponent: PostListComponent;
   let postListComponentComponentFixture: ComponentFixture<PostListComponent>;
   let postListComponentDebugElement: DebugElement;
-  let postService: jasmine.SpyObj<PostService>;
+  let postService: any;
 
   beforeEach(() => {
       const postServiceSpy = jasmine.createSpyObj("PostService", ["getPostsFromAPI"])
       TestBed.configureTestingModule({
         imports: [PostListComponent],
-        providers: [provideHttpClient(), {provide: LoggerService, useValue: postServiceSpy}]
+        providers: [provideHttpClient(), {provide: PostService, useValue: postServiceSpy}]
       });
       postListComponentComponentFixture = TestBed.createComponent(PostListComponent);
       postListComponent = postListComponentComponentFixture.componentInstance;
       postListComponentDebugElement = postListComponentComponentFixture.debugElement;
+      postService = TestBed.inject(PostService);
     }
   );
 
