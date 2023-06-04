@@ -3,6 +3,7 @@ import {ComponentFixture, TestBed} from '@angular/core/testing';
 import {CounterComponent} from './counter.component';
 import {DebugElement} from "@angular/core";
 import {By} from "@angular/platform-browser";
+import {COUNTER_INITAL_VALUE} from "../../model/counter";
 
 describe('CounterComponent', () => {
   let counterComponent: CounterComponent;
@@ -41,5 +42,14 @@ describe('CounterComponent', () => {
     augmentButton.nativeElement.click();
     counterComponentFixture.detectChanges();
     expect(counterComponent.counter()).toBe(COUNTER_INITIAL_VALUE - 1);
+  });
+
+  it('should reset counter value to zero', () => {
+    const COUNTER_VALUE_DIFFERENT_FROM_INITIAL = 1;
+    counterComponent.counter.set(COUNTER_VALUE_DIFFERENT_FROM_INITIAL);
+    const augmentButton = counterComponentDebugElement.query(By.css('#counter-reset'));
+    augmentButton.nativeElement.click();
+    counterComponentFixture.detectChanges();
+    expect(counterComponent.counter()).toBe(COUNTER_INITAL_VALUE);
   });
 });

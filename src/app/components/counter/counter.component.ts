@@ -1,5 +1,6 @@
 import {Component, signal} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
+import {COUNTER_INITAL_VALUE} from "../../model/counter";
 
 @Component({
   selector: 'app-counter',
@@ -20,4 +21,7 @@ export class CounterComponent {
     this.counter.set(this.counter() - 1);
   }
 
+  counterReset() {
+    this.counter.set(COUNTER_INITAL_VALUE);
+  }
 }
