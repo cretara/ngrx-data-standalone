@@ -12,5 +12,5 @@ import {CounterComponent} from "./counter/counter.component";
   imports: [RouterModule, CommonModule, PostListComponent, CounterComponent]
 })
 export class AppComponent {
-
+  
 }
